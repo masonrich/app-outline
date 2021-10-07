@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 export default function AppNavigator() {
   return (
     <NativeBaseProvider>
-      <NavigationContainer>
+      <NavigationContainer independent={true}>
         <Tab.Navigator
           tabBarOptions={{
             keyboardHidesTabBar: true,

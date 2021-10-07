@@ -1,6 +1,15 @@
 import * as React from "react";
-import AppNavigator from "./app/navigation/AppNavigator";
+import ConditionalNavigator from "./app/navigation/ConditionalNavigator";
+import { NavigationContainer } from "@react-navigation/native";
+import { ProvideAuth } from "./app/hooks/useAuth";
+import navigationTheme from "./app/navigation/navigationTheme";
 
 export default function App() {
-  return <AppNavigator />;
+  return (
+    <ProvideAuth>
+      <NavigationContainer theme={navigationTheme} independent={true}>
+        <ConditionalNavigator />
+      </NavigationContainer>
+    </ProvideAuth>
+  );
 }
